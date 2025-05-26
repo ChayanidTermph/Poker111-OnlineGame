@@ -1,6 +1,6 @@
 # ♠️ Poker Online Game – ITCS461 Project
 
-This is a secure online **Texas Hold’em Poker** game developed as a course project for **ITCS461 – Computer and Communication Security** at the **Faculty of Information and Communication Technology, Mahidol University**.
+This is a secure online **Texas Hold’em Poker** game developed as a course project in 3rd-year students for **ITCS461 – Computer and Communication Security** at the **Faculty of Information and Communication Technology, Mahidol University**.
 
 ## 🎯 Project Objective
 
@@ -70,7 +70,7 @@ Poker1111/
 ## 📚 Course Information
 - Course: ITCS461 – Computer and Communication Security
 
-- Faculty: Faculty of Information and Communication Technology
+- Faculty: Information and Communication Technology
 
 - University: Mahidol University
 
