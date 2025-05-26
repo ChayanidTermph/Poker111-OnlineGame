@@ -83,6 +83,11 @@ Poker1111/
 
 - Project Timeline: April 2025
 
+## 📛 Limitations
+- Be able to receive only small number of users due to limitation of free server.
+- Have no interface for winner
+- Sometimes still have bugs
+
 ## 📌 Future Improvements
 - Edit showing winner interface
 
