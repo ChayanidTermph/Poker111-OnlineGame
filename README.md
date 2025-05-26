@@ -39,7 +39,7 @@ Poker1111/
 ├── firebase.js # Firebase configuration
 ├── style.css # UI styling
 └── /assets # Card images and UI assets
-
+```
 
 ## 🚀 How to Play the Game
 
