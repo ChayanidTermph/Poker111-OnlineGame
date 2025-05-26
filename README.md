@@ -52,7 +52,7 @@ Poker1111/
 
 - Share this roomID to your friends
 
-3.Join the room
+3. Join the room
 
 - Join the room with received roomID from host
 
