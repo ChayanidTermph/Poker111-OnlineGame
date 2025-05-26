@@ -48,15 +48,15 @@ Poker1111/
 
 2. Create a room
 
-- You will get the roomID.
+   - You will get the roomID.
 
-- Share this roomID to your friends
+   - Share this roomID to your friends
 
 3. Join the room
 
-- Join the room with received roomID from host
+   - Join the room with received roomID from host
 
-- Wait for host to start the game
+   - Wait for host to start the game
 
 4. Start the game by host and play!
 
