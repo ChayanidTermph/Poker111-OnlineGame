@@ -4,6 +4,8 @@ This is a secure online **Texas Hold’em Poker** game developed as a course pro
 
 ## 🎯 Project Objective
 
+**Project Instruction:** Playing Poker on the Internet (4 students/group) - Develop a program to simulate an online Poker playing which can maintain the security close to the real playing, eg., **can prevent from any type of cheating.**
+
 The main goal of this project is to design and implement a secure, real-time, and fair multiplayer poker game using web technologies. It emphasizes principles of secure communication, user authentication, and game integrity to align with security practices taught in ITCS461.
 
 ## 🛡️ Key Features
@@ -38,28 +40,25 @@ Poker1111/
 └── /assets # Card images and UI assets
 
 
-## 🚀 How to Run the Game
+## 🚀 How to Play the Game
 
-1. Clone the repository:
+1. Open this website
    ```bash
-   git clone https://github.com/ChayanidTermph/Poker1111.git
-   cd Poker1111
+   https://byepoker888.web.app/
 
-2. Setup Firebase:
+2. Create a room
 
-- Create a Firebase project in Firebase Console
+- You will get the roomID.
 
-- Enable Firestore and Anonymous Authentication
+- Share this roomID to your friends
 
-- Add your Firebase config in firebase.js
+3.Join the room
 
-3. Launch the app:
+- Join the room with received roomID from host
 
-- Open index.html in a browser
+- Wait for host to start the game
 
-- Create a room or join an existing room
-
-- Start the game and play!
+4. Start the game by host and play!
 
 ## 🔐 Security Considerations
 - Players are assigned unique UIDs using Firebase Auth to prevent identity spoofing.
@@ -96,9 +95,6 @@ Poker1111/
 - Support for reconnection after disconnection
 
 - Improved hand evaluator and ranking visualizations
-
-## 🔗 Repository:
-https://github.com/ChayanidTermph/Poker1111
 
 Enjoy playing Poker securely! 🃏💻
 
