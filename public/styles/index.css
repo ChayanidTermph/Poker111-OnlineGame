@@ -1,0 +1,190 @@
+/* Index Page Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #0d7a4f; /* Poker green background */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: radial-gradient(circle, #138a5f, #0d7a4f);
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  color: #ffcc00;
+}
+
+p {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+input[type="text"] {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-bottom: 15px;
+  width: 300px;
+  text-align: center;
+}
+
+input[disabled] {
+  background-color: #f0f0f0;
+  color: #555;
+}
+
+button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d4af37; /* Gold button */
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background-color: #ffcc00;
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Screen containers */
+#screen-name, #screen-menu, #screen-create, #screen-join, #screen-lobby {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+  width: 90%;
+}
+
+.back-link {
+  color: #aaa;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.back-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Lobby specific styles */
+#lobbyRoomId {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+#playerList {
+  list-style-type: none;
+  margin: 20px 0;
+  padding: 0;
+  text-align: left;
+}
+
+#playerList li {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+#lobbyNote {
+  font-style: italic;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+.host-only {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#screen-name, #screen-menu, #screen-create, #screen-join, #screen-lobby {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Poker chip decorations */
+body::before, body::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #d4af37, #f5cc50);
+  border: 8px solid #222;
+  z-index: -1;
+}
+
+body::before {
+  top: 10%;
+  right: 10%;
+  transform: rotate(20deg);
+}
+
+body::after {
+  bottom: 10%;
+  left: 10%;
+  transform: rotate(-15deg);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+  
+  #screen-name, #screen-menu, #screen-create, #screen-join, #screen-lobby {
+    padding: 30px;
+    width: 95%;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+  }
+  
+  body::before, body::after {
+    width: 80px;
+    height: 80px;
+  }
+}

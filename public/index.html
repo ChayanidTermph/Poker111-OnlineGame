@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poker111</title>
+  <link rel="stylesheet" href="/styles/index.css">
+  <link rel="icon" href="data:,">
+  <script type="module" src="/scripts/index.js"></script>
+</head>
+<body>
+
+  <div id="screen-name">
+    <h1>Poker111</h1>
+    <p>What is your name?</p>
+    <input type="text" id="playerName" placeholder="Enter your name" />
+    <br>
+    <button id="saveNameBtn">Save</button>
+  </div>
+
+  <div id="screen-menu" class="hidden">
+    <h1>Poker111</h1>
+    <p id="welcomeText">Welcome, Player!</p>
+    <button onclick="goToCreateRoom()">Create Room</button>
+    <br>
+    <button onclick="goToJoinRoom()">Join Room</button>
+    <br>
+    <span class="back-link" onclick="goBackToName()">← Back</span>
+  </div>
+
+  <div id="screen-create" class="hidden">
+    <h1>Poker111</h1>
+    <p id="welcomeCreate">Welcome, Player!</p>
+    <p>Number of Player:</p>
+    <input type="text" value="2-4" disabled />
+    <p>Starting money:</p>
+    <input type="text" value="$10000" disabled />
+    <p>Timer:</p>
+    <input type="text" value="no-limit" disabled />
+    <br>
+    <button onclick="createRoomInFirebase()">Create Room</button>
+    <br>
+    <span class="back-link" onclick="goBackToMenu()">← Back</span>
+  </div>
+
+  <div id="screen-join" class="hidden">
+    <h1>Poker111</h1>
+    <p id="welcomeJoin">Welcome, Player!</p>
+    <input type="text" id="roomIdInput" placeholder="Room's ID" />
+    <br>
+    <button onclick="joinRoomFromFirebase()">Join Room</button>
+    <br>
+    <span class="back-link" onclick="goBackToMenu()">← Back</span>
+  </div>
+
+  <div id="screen-lobby" class="hidden">
+    <h1>Room Lobby</h1>
+    <br>
+    <p>You are: <strong id="currentPlayerName"></strong></p>
+    <p>Room ID: <span id="lobbyRoomId"></span></p>
+    <h3>Players:</h3>
+    <ul id="playerList"></ul>
+    <p id="lobbyNote"></p>
+    <button id="startGameBtn" class="host-only" onclick="startGame()">Start Game</button>
+    <br>
+    <button onclick="leaveRoom()">Leave Room</button>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Poker Game</title>
+  <link rel="stylesheet" href="/styles/tableroom.css">
+  <link rel="icon" href="data:,">
+  <script type="module" src="/scripts/tableroom.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const roomId = params.get('roomId');
+      const playerUID = params.get("player");
+      window.roomId = params.get('roomId');
+      window.playerUid = params.get('player');
+      
+      // Fixed validation - check for both parameters (redirect to home if no required params)
+      if (!roomId || !playerUID) {
+        alert("Access denied: Cannot access game room directly");
+        window.location.href = 'index.html';
+      }
+      
+      // Add debug output
+      console.log("Room ID:", roomId);
+      console.log("Player UID:", playerUID);
+    });
+  </script>
+
+</head>
+<body>
+  <div class="table-container">
+  
+    <div class="total-pot" id="potAmount">TOTAL POT $0</div>
+    <div id="communityCards" class="community-cards">
+      <div class="card pink"></div>
+      <div class="card pink"></div>
+      <div class="card pink"></div>
+      <div class="card pink"></div>
+      <div class="card pink"></div>
+    </div>
+
+    <div class="status-panel">
+      <div id="gamePhase">Pre-Flop</div>
+      <div id="turnDisplay">Waiting for player...</div>
+      <div id="currentCall">Current Call: $0</div>
+    </div>
+  
+    <!-- PLAYER 1 -->
+    <div class="player player-bottom">
+      <div class="hand">
+        <div class="card yellow"></div>
+        <div class="card yellow"></div>
+        <div class="highcard-label">?????</div>
+      </div>
+      <div class="bet">Total Bet: $0</div>
+      <div class="info">PLAYER 1<br>$10000 [ME]</div>
+    </div>
+  
+    <!-- PLAYER 2 -->
+    <div class="player player-right">
+      <div class="hand">
+        <div class="card orange"></div>
+        <div class="card orange"></div>
+      </div>
+      <div class="bet">Total Bet: $0</div>
+      <div class="info">PLAYER 2<br>$10000</div>
+    </div>
+  
+    <!-- PLAYER 3 -->
+    <div class="player player-top">
+      <div class="hand">
+        <div class="card orange"></div>
+        <div class="card orange"></div>
+      </div>
+      <div class="bet">Total Bet: $0</div>
+      <div class="info">PLAYER 3<br>$10000</div>
+    </div>
+  
+    <!-- PLAYER 4 -->
+    <div class="player player-left">
+      <div class="hand">
+        <div class="card orange"></div>
+        <div class="card orange"></div>
+      </div>
+      <div class="bet">Total Bet: $0</div>
+      <div class="info">PLAYER 4<br>$10000</div>
+    </div>
+  </div>
+
+  <div class="controls" id="controls">
+    <button id="callBtn">CALL</button>
+    <button id="foldBtn" onclick="window.fold(roomId, playerUid)">FOLD</button>
+    <button id="raiseBtn">RAISE</button>
+    
+    <div id="raiseBox" style="display: none;">
+      <input type="number" id="raiseInput" min="20" step="10">
+      <button onclick="window.submitRaise(roomId, playerUid)">Confirm</button>
+      <button onclick="document.getElementById('raiseBox').style.display='none'">Cancel</button>
+    </div>
+  </div>
+  
+  <div id="winnerPanel" style="display: none;" class="winner-announcement">
+    <div class="winner-content">
+      <button id="closeWinnerBtn" class="close-btn">×</button>
+      <h2>Winner!</h2>
+      <div id="winnerName"></div>
+      <div id="winnerHand"></div>
+      <div id="winningCards"></div>
+      <button id="newGameBtn" class="new-game-btn">Start New Round</button>
+    </div>
+  </div>
+
+  <div class="leave-room-container">
+    <button id="leaveRoomBtn" class="leave-room-btn">Leave Room</button>
+    <button id="startNewRoundBtn" class="button" style="display: none;">Start New Round</button>
+  </div>
+</body>
+</html>

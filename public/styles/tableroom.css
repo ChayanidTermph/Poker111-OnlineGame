@@ -1,0 +1,420 @@
+/* Table Room Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: white;
+  overflow: hidden;
+}
+
+.table-container {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  background-color: #0d7a4f; /* Poker table green */
+  border-radius: 50%;
+  border: 20px solid #6e4924; /* Wood border */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Community Cards */
+.community-cards {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.card {
+  width: 60px;
+  height: 90px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* สีตามดอกไพ่ */
+.card.spade {
+  background-color: #1e1e1e; /* ดำ */
+}
+
+.card.heart {
+  background-color: crimson; /* แดง */
+}
+
+.card.diamond {
+  background-color: royalblue; /* ฟ้า */
+}
+
+.card.back {
+  background-color: #b71540;
+  background-image: url('../resources/BackColor_Black.png'); /* ถ้ามี */
+  color: transparent; /* ซ่อนข้อความ */
+}
+
+.red-card {
+  color: red;
+}
+
+.black-card {
+  color: black;
+}
+
+.pink {
+  background-color: #ff5993;
+  color: transparent;
+}
+
+.yellow {
+  background-color: white;
+  border: 2px solid yellow;
+}
+
+.orange {
+  background-color: white;
+  color: transparent;
+}
+
+/* Pot Amount */
+.total-pot {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: gold;
+  z-index: 10;
+}
+
+/* Status Panel */
+.status-panel {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 10;
+}
+
+#gamePhase {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ffcc00;
+}
+
+#turnDisplay {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+#currentCall {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* Player Positions */
+.player {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  width: 200px;
+}
+
+.player-bottom {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.player-right {
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.player-top {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.player-left {
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Player Info */
+.hand {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.info {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.bet {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.highcard-label {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: gold;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* Control Buttons */
+.controls {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#callBtn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#foldBtn {
+  background-color: #f44336;
+  color: white;
+}
+
+#raiseBtn {
+  background-color: #2196F3;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Raise Input Box */
+#raiseBox {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 30;
+}
+
+#raiseInput {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Winner Panel */
+.winner-announcement {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.winner-content {
+  background-color: #2c3e50;
+  border: 5px solid gold;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 80%;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.winner-content h2 {
+  font-size: 36px;
+  color: gold;
+  margin-bottom: 20px;
+}
+
+#winnerName {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+#winnerHand {
+  font-size: 22px;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+#winningCards {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.new-game-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  font-size: 18px;
+}
+
+/* Current turn highlight */
+.current-turn {
+  animation: pulseTurn 2s infinite;
+}
+
+@keyframes pulseTurn {
+  0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+}
+
+/* Folded player style */
+.folded {
+  opacity: 0.5;
+}
+
+.folded .hand .card {
+  background-color: #888;
+}
+
+/* Leave Room Button */
+.leave-room-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 20;
+}
+
+.leave-room-btn {
+  background-color: #7b1fa2;
+  color: white;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .card {
+    width: 40px;
+    height: 60px;
+    font-size: 16px;
+  }
+  
+  .total-pot, #gamePhase {
+    font-size: 18px;
+  }
+  
+  .controls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .player {
+    width: 150px;
+  }
+  
+  .info, .bet {
+    font-size: 12px;
+  }
+}
+
+.position-tag {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}

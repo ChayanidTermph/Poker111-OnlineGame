@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    padding: 60px 20px;
+}
+h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+input, select {
+    font-family: inherit;
+    font-size: 1.2em;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ddd;
+    margin: 10px 0;
+    text-align: center;
+    width: 300px;
+}
+button {
+    font-family: inherit;
+    font-size: 1.3em;
+    padding: 12px 24px;
+    margin: 15px auto;
+    background-color: #2b4bc5;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 220px;
+}
+
+button:hover{
+    background-color:dodgerblue;
+}
+
+
+.back-link {
+    color: #2b4bc5;
+    font-size: 1em;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: underline;
+    display: inline-block;
+}
+.hidden {
+    display: none;
+}
+
+#playerList {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+#playerList li {
+  padding: 8px 0;
+  color: #333;
+}
+
+.host-only {
+  background-color: #28a745;
+}
+
+.host-only:hover {
+  background-color: #218838;
+}
+
+#lobbyRoomId {
+  font-weight: bold;
+  font-size: 1.2em;
+  background-color: #eee;
+  padding: 6px 12px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+  
+/* For closing the Winner Announcement Window */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Make sure the winner content is positioned relatively */
+.winner-content {
+  position: relative;
+  /* Your existing styles */
+}

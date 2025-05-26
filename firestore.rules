@@ -1,0 +1,41 @@
+// กฎความปลอดภัย Firestore ที่แนะนำ
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+
+    match /rooms/{roomId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null && request.auth.uid == resource.data.hostUID;
+      
+      match /games/{gameId} {
+        allow read, write: if request.auth != null;
+      }
+    }
+    
+    match /games/{gameId} {
+      allow read, write: if request.auth != null;
+
+      match /players/{playerId} {
+        allow read: if request.auth != null;
+        allow create, update: if request.auth != null && (request.auth.uid == playerId || 
+                                                      exists(/databases/$(database)/documents/games/$(gameId)) && 
+                                                      get(/databases/$(database)/documents/games/$(gameId)).data.hostUID == request.auth.uid);
+        allow delete: if request.auth != null && request.auth.uid == playerId;
+      }
+    }
+
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // กฎสำหรับ security_logs
+    match /security_logs/{logId} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
