@@ -28,6 +28,7 @@ The main goal of this project is to design and implement a secure, real-time, an
 - **Hosting (optional):** Firebase Hosting / GitHub Pages
 
 ## 📁 Project Structure
+```bash
 Poker1111/
 ├── index.html # Lobby & room join screen
 ├── playroom.html # Main game screen
@@ -43,7 +44,6 @@ Poker1111/
 ## 🚀 How to Play the Game
 
 1. Open this website
-   ```bash
    https://byepoker888.web.app/
 
 2. Create a room
